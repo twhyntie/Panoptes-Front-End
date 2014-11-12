@@ -7,6 +7,7 @@ Link = require '../lib/link'
 Markdown = require '../components/markdown'
 ClassifyPage = require './classify'
 LoadingIndicator = require '../components/loading-indicator'
+ProjectTalk = require '../talk/project-talk'
 Dashboard = require './dashboard'
 
 ProjectPage = React.createClass
@@ -103,11 +104,7 @@ ProjectPage = React.createClass
             <ClassifyPage project={@state.project.id} />
           </Route>
 
-          <Route path="/projects/:owner/:name/talk" className="project-text-content content-container">
-            <div>
-              <p>Discussion boards this project</p>
-            </div>
-          </Route>
+          <Route path="/projects/:owner/:name/talk(/:subsection)(/:microsection)" className="project-text-content content-container" handler={ProjectTalk} />
         </div>
 
       else
