@@ -10,7 +10,7 @@ module?.exports = React.createClass
     '/projects/' + owner + "/" + name + '/talk/' + boardName
 
   boardLink: (board, i) ->
-    <div key={i} className="project-talk-board">
+    <div key={i} className="talk-board-link">
       <Link href={@boardLinkHref(board.name)}>{board.name}</Link>
       <p>
         Latest Post: <span>{board.latestPost.title} </span>
