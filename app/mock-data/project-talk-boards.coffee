@@ -14,4 +14,3 @@ module?.exports = [
       date: 'Wed Nov 12 2014 14:55:08 GMT-0600 (CST)'
   }
 ]
-  

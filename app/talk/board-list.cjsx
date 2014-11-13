@@ -25,4 +25,3 @@ module?.exports = React.createClass
     <div className='talk-board-list'>
       {boardLinks}
     </div>
-
