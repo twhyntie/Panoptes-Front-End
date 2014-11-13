@@ -11,7 +11,6 @@ module?.exports = React.createClass
       <p>{comment.content}</p>
     </div>
 
-
   render: ->
     comments = thread.comments.map(@comment)
 
