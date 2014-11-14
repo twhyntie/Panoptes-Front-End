@@ -5,21 +5,26 @@ module?.exports = React.createClass
 
   formattedComment: ({title, comment, object}) ->
     {
-      title: title
+      title: title.trim()
       user: "Current User"
       date: new Date()
-      content: comment
+      comment: comment.trim()
     }
 
   onSubmitComment: (e) ->
     e.preventDefault()
-    title = @refs.title.getDOMNode().value.trim()
-    comment = @refs.comment.getDOMNode().value.trim()
-    object = @refs.object.getDOMNode().value
+    titleInput = @refs.title.getDOMNode()
+    commentInput = @refs.comment.getDOMNode()
+    objectSelect = @refs.object.getDOMNode()
 
-    console.log "Comment Submitted:", @formattedComment({title, comment, object})
+    console.log "Comment Submitted:", @formattedComment({
+      title: titleInput.value,
+      comment: commentInput.value,
+      object: objectSelect.value
+    })
 
-    comment.value = ""
+    titleInput.value = ""
+    commentInput.value = ""
 
   render: ->
     <div className='talk-comment-form'>
